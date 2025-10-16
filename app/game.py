@@ -74,5 +74,3 @@ def format_guess_stats(guess_stats):
     for num_of_guesses, num_of_games in guess_stats.items():
         formatted_guess_stats[num_of_guesses - 1] = "X" * num_of_games
     return formatted_guess_stats
-
-# Wave 4
