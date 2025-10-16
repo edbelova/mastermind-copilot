@@ -1,4 +1,4 @@
-from app.game import color_count, correct_pos_and_color, check_guess
+from app.game import color_count, correct_pos_and_color, generate_hint
 
 # --------------------------test color_count------------------------------------
 
@@ -127,7 +127,7 @@ def test_check_guess_matching_codes():
     guess = ['R', 'B', 'P', 'P']
     code = ['R', 'B', 'P', 'P']
     # Act
-    result = check_guess(guess, code)
+    result = generate_hint(guess, code)
 
     # Assert
     assert result == (4, 0)
@@ -139,7 +139,7 @@ def test_check_guess_mixed_guess():
     code = ['R', 'Y', 'B', 'P']
 
     # Act
-    result = check_guess(guess, code)
+    result = generate_hint(guess, code)
 
     # Assert
     assert result == (2, 1)
@@ -151,7 +151,7 @@ def test_check_guess_completely_incorrect():
     code = ['R', 'R', 'R', 'R']
 
     # Act
-    result = check_guess(guess, code)
+    result = generate_hint(guess, code)
 
     # Assert
     assert result == (0, 0)
